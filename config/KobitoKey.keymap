@@ -22,6 +22,11 @@
             bindings = <&mo 1>;
             key-positions = <35 36>;
         };
+
+        c_shift {
+            bindings = <&kp LSHIFT>;
+            key-positions = <33 34>;
+        };
     };
 
     keymap {
