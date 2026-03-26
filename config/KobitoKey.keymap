@@ -8,30 +8,6 @@
     combos {
         compatible = "zmk,combos";
 
-        combo_eisu {
-            timeout-ms = <50>;
-            key-positions = <12 13>;
-            bindings = <&kp LANG2>;
-        };
-
-        combo_kana {
-            timeout-ms = <50>;
-            key-positions = <16 17>;
-            bindings = <&kp LANG1>;
-        };
-
-        combo_esc {
-            timeout-ms = <50>;
-            key-positions = <0 1>;
-            bindings = <&kp ESC>;
-        };
-
-        combo_tab {
-            timeout-ms = <50>;
-            key-positions = <10 11>;
-            bindings = <&kp TAB>;
-        };
-
         cl_fn {
             bindings = <&mo 3>;
             key-positions = <32 35>;
@@ -57,10 +33,10 @@
 
         layer1 {
             bindings = <
-&kp EXCLAMATION    &kp AMPERSAND     &kp HASH   &kp DOLLAR  &kp PERCENT  &kp PLUS      &kp MINUS      &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp AT_SIGN
-&kp DOUBLE_QUOTES  &kp SINGLE_QUOTE  &kp GRAVE  &kp CARET   &kp INT_YEN  &kp ASTERISK  &kp SLASH      &kp LEFT_BRACE        &kp RIGHT_BRACE        &kp COLON
-&trans             &trans            &trans     &kp TILDE   &kp PIPE     &kp EQUAL     &kp BACKSLASH  &kp LEFT_BRACKET      &kp RIGHT_BRACKET      &kp SEMICOLON
-&trans             &trans            &trans     &trans      &trans       &trans        &trans         &trans                &kp QUESTION           &kp UNDERSCORE
+&kp TILDE  &kp CARET      &kp GRAVE      &kp SINGLE_QUOTE  &kp DOUBLE_QUOTES  &kp PLUS      &kp MINUS  &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp AT_SIGN
+&trans     &kp BACKSLASH  &kp AMPERSAND  &kp HASH          &kp EXCLAMATION    &kp ASTERISK  &kp SLASH  &kp LEFT_BRACE        &kp RIGHT_BRACE        &kp COLON
+&trans     &kp INT3       &kp PIPE       &kp PERCENT       &kp DOLLAR         &kp EQUAL     &trans     &kp LEFT_BRACKET      &kp RIGHT_BRACKET      &kp SEMICOLON
+&trans     &trans         &trans         &trans            &trans             &trans        &trans     &trans                &kp QUESTION           &kp UNDERSCORE
             >;
 
             label = "SYMBOL";
@@ -99,10 +75,10 @@
         layer5 {
             label = "MOUSE";
             bindings = <
-&trans  &trans  &trans  &trans  &trans  &trans  &mkp MB4  &trans    &mkp MB5  &trans
-&trans  &trans  &trans  &trans  &trans  &trans  &mkp MB1  &mkp MB3  &mkp MB2  &trans
-&trans  &trans  &trans  &trans  &trans  &trans  &trans    &trans    &trans    &trans
-&trans  &trans  &trans  &trans  &trans  &trans  &trans    &trans    &trans    &trans
+&trans     &trans  &trans  &trans  &trans  &trans    &trans    &trans    &trans    &trans
+&trans     &trans  &trans  &trans  &trans  &mkp MB4  &mkp MB1  &mkp MB3  &mkp MB2  &trans
+&trans     &trans  &trans  &trans  &trans  &mkp MB5  &trans    &trans    &trans    &trans
+&kp LSHFT  &trans  &trans  &trans  &trans  &trans    &trans    &trans    &trans    &trans
             >;
         };
     };
