@@ -25,18 +25,18 @@
     };
 
     macros {
-        clipy_v: new_macro {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&kp LCMD &kp LSHIFT &kp V>;
-            label = "NEW_MACRO";
-        };
-
-        clipy_b: new_macro {
+        clipy_b: clipy_b {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings = <&kp LCMD &kp LSHIFT &kp B>;
-            label = "NEW_MACRO";
+            label = "CLIPY_B";
+        };
+
+        clipy_v: clipy_v {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LCMD &kp LSHIFT &kp V>;
+            label = "CLIPY_V";
         };
     };
 
