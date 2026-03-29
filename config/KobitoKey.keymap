@@ -28,14 +28,28 @@
         clipy_b: clipy_b {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp LCMD &kp LSHIFT &kp B>;
+            bindings =
+                <&macro_press>,
+                <&kp LCMD &kp LSHIFT>,
+                <&macro_tap>,
+                <&kp B>,
+                <&macro_release>,
+                <&kp LCMD &kp LSHIFT>;
+
             label = "CLIPY_B";
         };
 
         clipy_v: clipy_v {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp LCMD &kp LSHIFT &kp V>;
+            bindings =
+                <&macro_press>,
+                <&kp LCMD &kp LSHFT>,
+                <&macro_tap>,
+                <&kp V>,
+                <&macro_release>,
+                <&kp LCMD &kp LSHIFT>;
+
             label = "CLIPY_V";
         };
     };
