@@ -22,6 +22,11 @@
             bindings = <&mo 1>;
             key-positions = <34 35>;
         };
+
+        ck_shift {
+            bindings = <&kp LSHIFT>;
+            key-positions = <30 32>;
+        };
     };
 
     macros {
