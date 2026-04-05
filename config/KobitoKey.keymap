@@ -10,7 +10,7 @@
 
         cl_fn {
             bindings = <&mo 3>;
-            key-positions = <32 35>;
+            key-positions = <32 36>;
         };
 
         cl_bt {
@@ -20,7 +20,7 @@
 
         cl_sym {
             bindings = <&mo 1>;
-            key-positions = <34 35>;
+            key-positions = <32 35>;
         };
 
         ck_shift {
