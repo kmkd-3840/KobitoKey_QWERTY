@@ -8,24 +8,19 @@
     combos {
         compatible = "zmk,combos";
 
-        cl_fn {
-            bindings = <&mo 3>;
-            key-positions = <32 36>;
-        };
-
         cl_bt {
             bindings = <&mo 4>;
             key-positions = <32 37>;
         };
 
-        cl_sym {
-            bindings = <&mo 1>;
-            key-positions = <32 35>;
+        cl_num {
+            bindings = <&mo 2>;
+            key-positions = <32 10>;
         };
 
         ck_shift {
             bindings = <&kp LSHIFT>;
-            key-positions = <30 32>;
+            key-positions = <30 31>;
         };
     };
 
@@ -57,6 +52,20 @@
 
             label = "CLIPY_V";
         };
+
+        screen_shot: screen_shot {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings =
+                <&macro_press>,
+                <&kp LCMD &kp LSHFT>,
+                <&macro_tap>,
+                <&kp N4>,
+                <&macro_release>,
+                <&kp LCMD &kp LSHIFT>;
+
+            label = "SCREEN_SHOT";
+        };
     };
 
     keymap {
@@ -64,19 +73,19 @@
 
         default_layer {
             bindings = <
-&kp Q      &kp W         &kp E        &kp R      &kp T           &kp Y      &kp U          &kp I       &kp O       &kp P
-&kp A      &kp S         &kp D        &kp F      &kp G           &kp H      &kp J          &kp K       &kp L       &kp MINUS
-&kp Z      &kp X         &kp C        &kp V      &kp B           &kp N      &kp M          &kp COMMA   &kp DOT     &kp SLASH
-&kp LCTRL  &kp LEFT_ALT  &lt 2 LANG2  &kp SPACE  &mt LCMD LANG1  &kp ENTER  &kp BACKSPACE  &kp RSHIFT  &kp ESCAPE  &kp TAB
+&kp Q      &kp W         &kp E        &kp R      &kp T           &kp Y      &kp U          &kp I       &kp O         &kp P
+&kp A      &kp S         &kp D        &kp F      &kp G           &kp H      &kp J          &kp K       &kp L         &kp MINUS
+&kp Z      &kp X         &kp C        &kp V      &kp B           &kp N      &kp M          &kp COMMA   &kp DOT       &kp SLASH
+&kp LCTRL  &kp LEFT_ALT  &lt 1 LANG2  &kp SPACE  &mt LCMD LANG1  &kp ENTER  &kp BACKSPACE  &kp RSHIFT  &lt 3 ESCAPE  &kp TAB
             >;
         };
 
         layer1 {
             bindings = <
-&trans  &kp CARET      &kp GRAVE      &kp SINGLE_QUOTE  &kp DOUBLE_QUOTES  &kp PLUS      &kp MINUS    &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &trans
-&trans  &kp BACKSLASH  &kp AMPERSAND  &kp HASH          &kp EXCLAMATION    &kp ASTERISK  &kp SLASH    &kp LEFT_BRACE        &kp RIGHT_BRACE        &kp COLON
-&trans  &kp TILDE      &kp PIPE       &kp PERCENT       &kp DOLLAR         &kp EQUAL     &kp AT_SIGN  &kp LEFT_BRACKET      &kp RIGHT_BRACKET      &kp SEMICOLON
-&trans  &trans         &trans         &trans            &trans             &trans        &trans       &trans                &kp QUESTION           &kp UNDERSCORE
+&trans  &kp CARET      &kp GRAVE      &kp SINGLE_QUOTE  &kp DOUBLE_QUOTES  &kp PLUS      &kp MINUS  &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp AT_SIGN
+&trans  &kp BACKSLASH  &kp AMPERSAND  &kp HASH          &kp EXCLAMATION    &kp ASTERISK  &kp SLASH  &kp LEFT_BRACE        &kp RIGHT_BRACE        &kp COLON
+&trans  &kp TILDE      &kp PIPE       &kp PERCENT       &kp DOLLAR         &kp EQUAL     &trans     &kp LEFT_BRACKET      &kp RIGHT_BRACKET      &kp SEMICOLON
+&trans  &trans         &trans         &trans            &trans             &trans        &trans     &trans                &kp QUESTION           &kp UNDERSCORE
             >;
 
             label = "SYMBOL";
@@ -95,10 +104,10 @@
         layer3 {
             label = "FUNCTION";
             bindings = <
-&kp F4   &kp F3   &kp F2   &kp F1  &trans  &trans  &trans    &trans    &trans  &trans
-&kp F8   &kp F7   &kp F6   &kp F5  &trans  &trans  &clipy_v  &clipy_b  &trans  &trans
-&kp F12  &kp F11  &kp F10  &kp F9  &trans  &trans  &trans    &trans    &trans  &trans
-&trans   &trans   &trans   &trans  &trans  &trans  &trans    &trans    &trans  &trans
+&kp F4   &kp F3   &kp F2   &kp F1  &trans  &trans  &screen_shot  &trans    &trans  &trans
+&kp F8   &kp F7   &kp F6   &kp F5  &trans  &trans  &clipy_v      &clipy_b  &trans  &trans
+&kp F12  &kp F11  &kp F10  &kp F9  &trans  &trans  &trans        &trans    &trans  &trans
+&trans   &trans   &trans   &trans  &trans  &trans  &trans        &trans    &trans  &trans
             >;
         };
 
@@ -115,10 +124,10 @@
         layer5 {
             label = "MOUSE";
             bindings = <
-&trans     &trans  &trans  &trans  &trans  &mkp MB4  &mkp MB1          &msc MOVE_Y(20)   &mkp MB2         &trans
-&trans     &trans  &trans  &trans  &trans  &mkp MB5  &msc MOVE_X(-20)  &msc MOVE_Y(-20)  &msc MOVE_X(20)  &trans
-&trans     &trans  &trans  &trans  &trans  &trans    &trans            &trans            &trans           &trans
-&kp LSHFT  &trans  &trans  &trans  &trans  &trans    &trans            &trans            &trans           &trans
+&trans  &trans  &trans  &trans  &trans  &mkp MB4  &mkp MB1          &msc MOVE_Y(20)   &mkp MB2         &trans
+&trans  &trans  &trans  &trans  &trans  &mkp MB5  &msc MOVE_X(-20)  &msc MOVE_Y(-20)  &msc MOVE_X(20)  &trans
+&trans  &trans  &trans  &trans  &trans  &trans    &trans            &trans            &trans           &trans
+&trans  &trans  &trans  &trans  &trans  &trans    &trans            &trans            &trans           &trans
             >;
         };
     };
