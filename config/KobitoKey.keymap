@@ -66,6 +66,13 @@
 
             label = "SCREEN_SHOT";
         };
+
+        input_id: input_id {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LS(J) &kp LS(R) &kp LS(Z) &kp N1 &kp N1 &kp N5 &kp N2>;
+            label = "INPUT_ID";
+        };
     };
 
     keymap {
@@ -94,20 +101,20 @@
         layer2 {
             label = "NUMBER";
             bindings = <
-&trans   &kp N7  &kp N8  &kp N9  &trans  &kp HOME  &kp PAGE_UP  &kp UP    &kp PAGE_DOWN  &trans
-&trans   &kp N4  &kp N5  &kp N6  &trans  &kp END   &kp LEFT     &kp DOWN  &kp RIGHT      &kp DELETE
-&kp DOT  &kp N1  &kp N2  &kp N3  &kp N0  &trans    &trans       &trans    &trans         &trans
-&trans   &trans  &trans  &trans  &trans  &trans    &trans       &trans    &trans         &trans
+&trans  &kp N7  &kp N8  &kp N9  &trans  &kp HOME  &kp PAGE_UP  &kp UP    &kp PAGE_DOWN  &trans
+&mo 2   &kp N4  &kp N5  &kp N6  &trans  &kp END   &kp LEFT     &kp DOWN  &kp RIGHT      &kp DELETE
+&trans  &kp N1  &kp N2  &kp N3  &kp N0  &trans    &trans       &trans    &trans         &trans
+&trans  &trans  &trans  &trans  &trans  &trans    &trans       &trans    &trans         &trans
             >;
         };
 
         layer3 {
             label = "FUNCTION";
             bindings = <
-&kp F4   &kp F3   &kp F2   &kp F1  &trans  &trans  &screen_shot  &trans    &trans  &trans
-&kp F8   &kp F7   &kp F6   &kp F5  &trans  &trans  &clipy_v      &clipy_b  &trans  &trans
-&kp F12  &kp F11  &kp F10  &kp F9  &trans  &trans  &trans        &trans    &trans  &trans
-&trans   &trans   &trans   &trans  &trans  &trans  &trans        &trans    &trans  &trans
+&kp F4   &kp F3   &kp F2   &kp F1  &trans  &screen_shot  &input_id  &trans    &trans  &trans
+&kp F8   &kp F7   &kp F6   &kp F5  &trans  &trans        &clipy_v   &clipy_b  &trans  &trans
+&kp F12  &kp F11  &kp F10  &kp F9  &trans  &trans        &trans     &trans    &trans  &trans
+&trans   &trans   &trans   &trans  &trans  &trans        &trans     &trans    &trans  &trans
             >;
         };
 
